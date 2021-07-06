@@ -8,11 +8,11 @@ public class PromedioAjustado {
         //4) Hacer la conversión a escala de 0 a 5
         //5) Retornar el resultado
 
-       
-        public static double nota_quices_iterativo(int nota1 , int nota2, int nota3, int nota4, int nota5){
+        //LOGICA BACK       
+        public static double nota_quices(int nota1 , int nota2, int nota3, int nota4, int nota5){
 
             //Variable que va a contener el resultado
-            double PromedioAjustado=0;
+            double promedioAjustado=0;
 
 
             //1) Identificar cuál es la peor nota
@@ -43,13 +43,19 @@ public class PromedioAjustado {
             //2) Retirar la peor nota
             //3) Obtener el promedio
 
-            PromedioAjustado = ((nota1 + nota2 + nota3 + nota4 + nota5)-peorNota)/4;
+            promedioAjustado = ((nota1 + nota2 + nota3 + nota4 + nota5)-peorNota)/4;
 
             //4) Hacer la conversión a escala de 0 a 5
-            PromedioAjustado = PromedioAjustado/20;
+            promedioAjustado = promedioAjustado/20;
 
-            return PromedioAjustado;
-        }       
+            return promedioAjustado;
+        }   
+        
+
+        //INTERACTIVIDAD FRONT
+        public static void presentarResultado(String codigo, double promedioAjustado){
+            System.out.println("El promedio ajustado del estudiante "+codigo+ " es: " + promedioAjustado);
+        }
         
         
 
@@ -57,11 +63,16 @@ public class PromedioAjustado {
 
         public static void main(String[] args) {
 
+            
             String codigo = "AA01";
-            double resultadoNota = nota_quices_iterativo(40, 50, 39, 76, 96);
+
+            presentarResultado(codigo, nota_quices(40, 50, 39, 76, 96));
+            
+            /*
+            double resultadoNota = nota_quices(40, 50, 39, 76, 96);
 
             System.out.println("El promedio ajustado del estudiante "+codigo+ " es: " + resultadoNota);
-            
+            */
         }
 
     
