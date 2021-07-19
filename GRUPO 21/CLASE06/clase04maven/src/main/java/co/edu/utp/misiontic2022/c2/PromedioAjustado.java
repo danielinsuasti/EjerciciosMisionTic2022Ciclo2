@@ -16,7 +16,7 @@ public class PromedioAjustado {
 
 
             //1) Identificar cuál es la peor nota
-            /*
+            
             int peorNota = nota1;
 
             if(nota2<peorNota){
@@ -31,9 +31,9 @@ public class PromedioAjustado {
             if(nota5<peorNota){
                 peorNota =nota5;
             }
-            */
             
-            int peorNota = nota1;
+            
+            //int peorNota = nota1;
             peorNota = nota2< peorNota ? nota2 : peorNota;
             peorNota = nota3< peorNota ? nota3 : peorNota;
             peorNota = nota4< peorNota ? nota4 : peorNota;

@@ -18,7 +18,7 @@ public class Nota {
 
     Nota(int pEscala100){
         this.escala100 = pEscala100;
-        this.escala5 = pEscala100 /20;
+        this.escala5 = (double)pEscala100 /20;
         if(pEscala100 >=60){
             this.cualitativa = "Aprobado";
         } else{
