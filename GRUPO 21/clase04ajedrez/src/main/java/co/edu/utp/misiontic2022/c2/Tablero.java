@@ -12,8 +12,6 @@ public class Tablero implements Dibujable {
 
     }
 
-
-
     public Boolean hacerEnroque(){
         return true;
     }
