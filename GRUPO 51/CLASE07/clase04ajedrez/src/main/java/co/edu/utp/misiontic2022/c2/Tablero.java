@@ -1,7 +1,7 @@
 package co.edu.utp.misiontic2022.c2;
 
 
-public class Tablero 
+public class Tablero
 {
     public Boolean HacerEnroque(){
         return true;
