@@ -7,15 +7,15 @@ public class CollectionsDemo {
     public static void main(String[] args) {
         //setDemo();
         //listDemo();
-        //mapDemo();
+        mapDemo();
         //queueDemo();
-        manejoListas();
+        //manejoListas();
         
     }
 
 
     public static void setDemo(){
-        Set<String> fruta = new LinkedHashSet<();
+        Set<String> fruta = new HashSet<>();
         fruta.add("manzana");
         fruta.add("limon");
         fruta.add("banano");
@@ -25,6 +25,34 @@ public class CollectionsDemo {
 
         System.out.println(fruta.size());//4
         System.out.println(fruta);
+
+        /*RECORRIDO*/
+        System.out.println("EJEMPLOS RECORRIDOS");
+
+        //FORMA 0
+        //for convencional no funciona aqui
+
+        //FORMA 1
+        
+        for(String item : fruta){
+            System.out.println(item);
+        }
+
+        //FORMA 2
+
+        // var i = fruta.iterator();
+
+        // while(i.hasNext()){
+        //     System.out.println("con iterador :"+ i.next());
+        // }
+
+        //FORMA 3
+
+        // fruta.forEach(x -> System.out.println("con lambda : "+ x));
+
+        //FORMA 4
+        // fruta.forEach(System.out::println);
+
 
     }
     
@@ -66,21 +94,36 @@ public class CollectionsDemo {
     }
 
     public static void mapDemo(){
-        Map frutasCalorias = new LinkedHashMap();
+        Map<String, Integer> frutasCalorias = new LinkedHashMap();
         frutasCalorias.put("manzana", 95);
         frutasCalorias.put("limon", 20);
         frutasCalorias.put("banano", 105);
         frutasCalorias.put("naranja", 45);
         frutasCalorias.put("limon", 17);
 
-        System.out.println(frutasCalorias.size());
-        System.out.println(frutasCalorias);
-        System.out.println(frutasCalorias.get("banano"));
-        System.out.println(frutasCalorias.entrySet());
+        // System.out.println(frutasCalorias.size());
+        // System.out.println(frutasCalorias);
+        // System.out.println(frutasCalorias.get("banano"));
+        // System.out.println(frutasCalorias.entrySet());
 
-        frutasCalorias.remove("naranja");
-        System.out.println(frutasCalorias);
+        // frutasCalorias.remove("naranja");
+        // System.out.println(frutasCalorias);
+
+        //ITERAR SOBRE MAPS
+        System.out.println("Iteracion sobre los MAPS");
+        // FORMA 1
+        for(var entrada : frutasCalorias.entrySet()){
+            System.out.print(entrada.getValue() + " ");
+            System.out.println(entrada.getKey());
+        }
+
+        //FORMA 2
+        frutasCalorias.forEach(
+            (k,v) -> System.out.println("fruta: " + k + ", Calorias: " + v));
+            
     }
+
+
 
     public static void manejoListas(){
         //Conceptro Generics
