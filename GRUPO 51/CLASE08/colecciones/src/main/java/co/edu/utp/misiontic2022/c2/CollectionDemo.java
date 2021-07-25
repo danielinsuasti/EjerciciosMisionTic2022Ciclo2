@@ -12,9 +12,10 @@ public class CollectionDemo {
     
     public static void main(String[] args) {
         //setDemo();
-        listDemo();
+        //listDemo();
         //queueDemo();
         //mapDemo();
+        manejoListas();
     }
 
     
@@ -95,22 +96,55 @@ public class CollectionDemo {
     }
 
     public static void mapDemo(){
-        Map frutasCalorias = new HashMap(); //new LinkedHashMap()
+        Map<String, Integer> frutasCalorias = new HashMap(); //new LinkedHashMap()
         frutasCalorias.put("manzana", 95);
         frutasCalorias.put("limon", 20);
         frutasCalorias.put("banano", 105);
         frutasCalorias.put("naranja", 45);
         frutasCalorias.put("limon", 17);
 
-        System.out.println(frutasCalorias.size());
-        System.out.println(frutasCalorias);
-        System.out.println(frutasCalorias.get("naranja"));
-        System.out.println(frutasCalorias.entrySet());
 
-        frutasCalorias.remove("limon");
-        System.out.println(frutasCalorias);
+        // System.out.println(frutasCalorias.size());
+        // System.out.println(frutasCalorias);
+        // System.out.println(frutasCalorias.get("naranja"));
+        // System.out.println(frutasCalorias.entrySet());
+
+        // frutasCalorias.remove("limon");
+        // System.out.println(frutasCalorias);
+
+        //ITERAR SOBRE MAPS
+
+        //FORMA 1
+
+        for(var entrada : frutasCalorias.entrySet()){
+            System.out.print(entrada.getValue()+ ":   ");
+            System.out.println(entrada.getKey());
+        }
+
+        //FORMA 2
+        frutasCalorias.forEach(
+            (k, v) -> System.out.println("fruta: "+ k + ", calorias: " +v));
+
+
+
+
+
 
     }
     
+    public static void manejoListas(){
+        //Concepto Generics
+
+        List<Object> listaBasica = new ArrayList<>();
+        listaBasica.add("Una cadena");
+        listaBasica.add(10);
+        listaBasica.add(new ClasePersona());
+        listaBasica.add(new ArrayList<ClasePersona>());
+        System.out.println("Tamaño: "+ listaBasica.size());
+        System.out.println(listaBasica);
+
+    }
+
+
     
 }
