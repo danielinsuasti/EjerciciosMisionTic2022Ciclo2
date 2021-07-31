@@ -1,0 +1,48 @@
+--PRIMER EJERCICIO
+
+CREATE TABLE clientes(
+	cedula INTEGER NOT NULL,
+	nombre varchar(30) NOT NULL,
+	direccion varchar(100) default 'No ingresada',
+	telefono varchar(15) NOT NULL,
+	CONSTRAINT PK_Cliente PRIMARY KEY(cedula)
+)
+
+ALTER TABLE clientes ADD COLUMN Fecha_Registro DATE
+
+--DROP TABLE clientes
+
+
+
+-- SEGUNDO EJERCICIO
+
+CREATE TABLE dept(
+	ID NUMERIC(7) NOT NULL,
+	NAME VARCHAR(25),
+	PRIMARY KEY(ID)
+)
+
+INSERT INTO dept (ID, NAME) VALUES
+ (1, "TECNOLOGIA"),
+ (2, "VENTAS");
+
+
+CREATE TABLE emp(
+	ID NUMERIC(7) NOT NULL,
+	LAST_NAME VARCHAR(25),
+	FIRST_NAME VARCHAR(25),
+	DEPT_ID NUMBER(7),
+	PRIMARY KEY(ID),
+	FOREIGN KEY(DEPT_ID) REFERENCES dept(ID)	
+)
+
+INSERT INTO emp (ID, LAST_NAME, FIRST_NAME, DEPT_ID) VALUES
+ (10, "ARIAS", "FELIPE", 1),
+ (11, "SALDARRIAGA", "ANDRES", 2);
+
+DROP TABLE dept;
+
+DROP TABLE emp;
+
+
+--
