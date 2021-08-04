@@ -26,7 +26,7 @@ public class App {
                 int id_job = rs.getInt("job_id");
                 String title_job = rs.getString("job_title");
                 int salario_min = rs.getInt("min_salary");
-                int salario_max = rs.getInt("max_salary");
+                int salario_max = rs.getInt("max_salary");                
                 //Hacer lo que quiera con los datos leidos
                 System.out.println( "Id_Trabajo= " + id_job + 
                                     " Nombre Trabajo = "+ title_job + 
